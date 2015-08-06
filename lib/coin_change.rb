@@ -4,10 +4,11 @@ class Fixnum
     quarter = 0
     dime = 0
     nickel = 0
+    penny = 0
     change=""
 
-    until remaining_change.<(5)
-      if remaining_change.>25
+    until remaining_change.==0
+      if remaining_change.>=25
         quarter = (remaining_change./(25)).floor()
         remaining_change = remaining_change.-(quarter.*(25))
         quarter = quarter.to_s()
@@ -44,6 +45,23 @@ class Fixnum
 #binding.pry()
         if nickel.to_f().>1
           change.concat("s")
+        end
+      end
+
+      remaining_change
+      change
+
+      if remaining_change.>=(1)
+        penny = (remaining_change./(1)).floor()
+        remaining_change = remaining_change.-(penny.*(1))
+        penny = penny.to_s()
+
+        change = change.concat(" and ").concat(penny.concat(" Penn"))
+#binding.pry()
+        if penny.to_f().>1
+          change.concat("ies")
+        else
+          change.concat("y")
         end
       end
 
