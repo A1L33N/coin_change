@@ -10,5 +10,9 @@ class Fixnum
       remaining_change = input.-(quarter.*(25))
     end
     change = quarter.to_s().concat(" Quarter")
+    if quarter.>1
+      change.concat("s")
+    end
+    change
   end
 end
