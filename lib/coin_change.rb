@@ -85,8 +85,11 @@ class Float
       if input_price.length()==1
 
         change
+      #elsif input_price.length.>1 && dollar.==("1")
+      #  change = dollar.concat(" Dollar, ").concat(change)
+
       else
-        change = dollar.concat(" Dollar, ").concat(change)
+        change = dollar.concat(" Dollars, ").concat(change)
         # binding.pry
       end
     change
