@@ -1,6 +1,21 @@
-class Fixnum
+class Float
   define_method(:coin_change) do
-    remaining_change = self
+    input_price = self.to_s.split(".")
+    remaining_change=0
+    if input_price.length() > 1
+      remaining_change=input_price[1].to_f()
+    else
+      remaining_change=input_price[0].to_f()
+    end
+    remaining_change
+      if remaining_change.< 10
+        remaining_change = remaining_change.*(10)
+      else
+        remaining_change
+      end
+
+  #binding.pry
+    dollar = input_price[0].to_s()
     quarter = 0
     dime = 0
     nickel = 0
@@ -66,8 +81,14 @@ class Fixnum
       end
 
     end
-
     change
+      if input_price.length()==1
 
+        change
+      else
+        change = dollar.concat(" Dollar, ").concat(change)
+        # binding.pry
+      end
+    change
     end
 end
