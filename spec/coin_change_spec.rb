@@ -25,6 +25,6 @@ describe('Float#coin_change') do
 
 
     it("returns dollars and number of coins for values over one dollar") do
-      expect((1.67).coin_change()).to(eq("1 Dollar, 2 Quarters, 1 Dime, 1 Nickel and 2 Pennies"))
+      expect((1.67).coin_change()).to(eq("1 Dollars, 2 Quarters, 1 Dime, 1 Nickel and 2 Pennies"))
     end
 end
